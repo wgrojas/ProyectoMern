@@ -56,7 +56,7 @@ export default class login extends React.Component {
         <Row>
           <Col>
             <Row>
-              <h2>Inicar sesión</h2>
+              <h2>Iniciar Sesión</h2>
             </Row>
             <Row>
               <Col
@@ -89,7 +89,7 @@ export default class login extends React.Component {
                       this.iniciarSesion();
                     }}
                   >
-                    Inicar sesión
+                    Iniciar Sesión
                   </Button>
                 </Form>
               </Col>
