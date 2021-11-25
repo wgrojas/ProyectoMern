@@ -63,7 +63,7 @@ exports.update = function(req, res) {
         response.msg = 'El producto se modificó correctamente'
         res.json(response)
     })
-}
+ }
 
 exports.remove = function (req, res) {
     Producto.findByIdAndRemove({ _id: req.params.id }, function(err) {

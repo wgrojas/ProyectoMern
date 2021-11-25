@@ -40,22 +40,25 @@ export default class Menu extends React.Component {
 
     render() {
         return (
-            <Navbar fixed="top" id="navbar" bg="warning" variant="light">
+            <Navbar fixed="top" id="navbar" bg="success" variant="light">
                 <Container>
                     <img className="img-logo"
                         src={Logo}
                         alt="Logo"/>
                     <Navbar.Brand href="./">
-                        SmartWeb {/* <span id="navbar-sub-brand"> Olga</span> */} </Navbar.Brand>
+                        CompuSmart Web {/* <span id="navbar-sub-brand"> Olga</span> */} </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/productos">Productos</Nav.Link>
                             <Nav.Link 
                                 href="/panel">Editar Productos</Nav.Link>
+                                {/* <Navbar.Brand>
+                                    IT SmartWeb
+                                </Navbar.Brand> */}
 
                         </Nav>
-
+                       
                         <DropdownButton id="dropdown-basic-button" title="Usuario">
                             <Dropdown.Header id="dropdown-header">
                                 <Row>
