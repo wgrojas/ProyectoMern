@@ -9,7 +9,7 @@ export default class Home extends React.Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="assets\\7.png" width="100%" height="800"
+                        src="assets\\7.png" width="20%" height="650"
                         alt="Third slide"
                     />
 
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="assets\\1.jpg" width="100%" height="800"
+                        src="assets\\1.jpg" width="20%" height="650"
                         alt="Third slide"
                     />
 

@@ -7,6 +7,7 @@ import { isNull } from 'util';
 import Cookies from 'universal-cookie';
 import { calculaExpiracionSesion } from '../helper/helper';
 import Loading from '../loading/loading';
+import Swal from 'sweetalert2';
 
 const cookies = new Cookies();
 
@@ -30,7 +31,13 @@ export default class login extends React.Component {
       })
       .then((response) => {
         if (isNull(response.data.token)) {
-          alert('Usuario y/o contraseña invalidos');
+          // alert('Usuario y/o contraseña invalidos');
+          Swal.fire({
+                      title: 'Error!',
+                      text: 'Usuario o Contraseña Incorrecto',
+                      icon: 'error',
+                      confirmButtonText: 'Ok'
+                    })
         } else {
           cookies.set('_s', response.data.token, {
             path: '/',

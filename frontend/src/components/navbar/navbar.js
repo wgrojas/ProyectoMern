@@ -8,8 +8,9 @@ import {
     Row
 } from "react-bootstrap";
 
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUserCircle} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import Swal from 'sweetalert2';
 import "./navbar.css";
 import Cookies from "universal-cookie/es6";
 import Logo from '../Logo.png'
@@ -21,22 +22,39 @@ export default class Menu extends React.Component {
         super(props);
         this.state = {};
     }
-  
+
     // useEffect(() => {
-     
+
     //     if (sessionStorage.getItem ('token')){
-            
+
     //            show(false)}
-        
+
     // });
-    
+
 
     logout() {
-        cookies.remove("_s");
-        window.location.reload();
+        Swal.fire({
+            title: 'Cerrar Sesion',
+            text: "Está seguro(a) que desea salir?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                cookies.remove("_s");
+                window.location.reload();
+                Swal.fire(
+                    'Sesion Cerrada!',
+                    'Gracias por Visitarnos',
+                    'success'
+                )
+            }
+        })
     }
 
-    
+
 
     render() {
         return (
@@ -44,28 +62,28 @@ export default class Menu extends React.Component {
                 <Container>
                     <img className="img-logo"
                         src={Logo}
-                        alt="Logo"/>
+                        alt="Logo" />
                     <Navbar.Brand href="./">
                         CompuSmart Web {/* <span id="navbar-sub-brand"> Olga</span> */} </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="/productos">Productos</Nav.Link>
-                            <Nav.Link 
+                            <Nav.Link
                                 href="/panel">Editar Productos</Nav.Link>
-                                {/* <Navbar.Brand>
+                            {/* <Navbar.Brand>
                                     IT SmartWeb
                                 </Navbar.Brand> */}
 
                         </Nav>
-                       
-                        <DropdownButton id="dropdown-basic-button" title="Usuario">
+
+                        <DropdownButton id="dropdown-basic-button" title="Usuario" >
                             <Dropdown.Header id="dropdown-header">
                                 <Row>
-                                    <FontAwesomeIcon icon={faUserCircle}/> {/* <Nav.Link href="/login">Login</Nav.Link> */} </Row>
-                                <Row>Usuario</Row>
+                                    <FontAwesomeIcon icon={faUserCircle} /> {/* <Nav.Link href="/login">Login</Nav.Link> */} </Row>
+                                <Row>USUARIO</Row>
                             </Dropdown.Header>
-                            <Dropdown.Divider/>
+                            <Dropdown.Divider />
                             <Dropdown.Item onClick={
                                 () => this.logout()
                             }>
