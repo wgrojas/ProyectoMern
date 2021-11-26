@@ -90,8 +90,8 @@ export default class login extends React.Component {
                       onChange={(e) => this.setState({ pass: e.target.value })}
                     />
                   </Form.Group>
-                  <Button
-                    variant="primary"
+                  <Button id="btn-iniciar-sesion"
+                    variant="success"
                     onClick={() => {
                       this.iniciarSesion();
                     }}

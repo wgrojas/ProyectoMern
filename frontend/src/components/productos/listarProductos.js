@@ -61,7 +61,7 @@ export default class ListarProductos extends Component {
 
     
        <Container>
-         <h2 style={{ marginTop: 120, fontSize:50 }}><b>Componentes Tecnologicos</b></h2>
+         <h2 style={{ marginTop: 120, fontSize:50 }}><b>Componentes Tecnológicos</b></h2>
            <Row>
          
                {arrayComponente}

@@ -124,7 +124,7 @@ export default class ProductosCrear extends React.Component {
             </Form.Group> */}
 
             <Button id="btn-enviar"
-              variant="primary"
+              variant="success"
               onClick={() => console.log(this.guardarProductos())
              
               }

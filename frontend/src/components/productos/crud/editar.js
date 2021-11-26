@@ -193,8 +193,8 @@ export default class ProductosEditar extends React.Component {
               />
             </Form.Group> */}
 
-            <Button
-              variant="primary"
+            <Button id="btn-enviar"
+              variant="success"
               onClick={() =>
                 this.setState({
                   confirmation: { ...this.state.confirmation, show: true },
