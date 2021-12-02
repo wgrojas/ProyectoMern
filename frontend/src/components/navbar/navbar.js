@@ -55,12 +55,12 @@ export default class Menu extends React.Component {
         <Container>
           <img className="img-logo" src={Logo} alt="Logo" />
           <Navbar.Brand href="./">
-            CompuWebSite {/* <span id="navbar-sub-brand"> Olga</span> */}{" "}
+            CompuWebSite 
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/productos">Productos</Nav.Link>
+              <Nav.Link href="/productos">Lista de Productos</Nav.Link>
               {/* <Nav.Link
                                 href="/panel">Editar Productos</Nav.Link> */}
               {/* <Navbar.Brand>
