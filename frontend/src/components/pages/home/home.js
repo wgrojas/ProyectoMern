@@ -1,22 +1,35 @@
-import React from 'react';
-import './home.css';
+import React, {useState} from "react";
+import {Carousel} from "react-bootstrap";
+import Productos from "../../productos/productos";
+import "./home.css";
 
 export default class Home extends React.Component {
     render() {
         return (
-            <div>
-                
+            <Carousel>
+                <Carousel.Item interval={2000}>
+                    <img className="d-block w-100" src="assets\\1.jpg"
+                        ref={Productos}
+                        width="20%"
+                        height="900"
+                        alt="Firs slide"/>
+                    <Carousel.Caption>
+                        <h2>Computadores Gamer</h2>
+                        <p>
+                            Vive la experiencia gamer a su maxima potencia con equipos
+                                          avanzados
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
 
-                <div id="banner">
-                    <img src="assets\\7.png" alt="banner" width="1920" height="800" />
-                </div>
-                <div>
-                
-                <img src="assets\\1.jpg" alt="banner" width="1920" height="800" />
-
-                </div>
-
-            </div>
+                <Carousel.Item interval={2000}>
+                    <img className="d-block w-100" src="assets\\7.png" width="20%" height="900" alt="Second slide"/>{" "}
+                    <Carousel.Caption>
+                        <h2>Todo lo que necesitas para tu computador</h2>
+                        <p>Todos los componentes que necesitas para armar tu equipo</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
         );
     }
 }

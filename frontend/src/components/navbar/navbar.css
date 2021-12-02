@@ -16,3 +16,12 @@
   height: 80px;
   padding-right: 10px;
 }
+
+#navbar .dropdown-item{
+  text-align: center;
+}
+
+#navbar #dropdown-basic-button{
+  background-color: #1BD084;
+  border-color: #1BD084;
+}

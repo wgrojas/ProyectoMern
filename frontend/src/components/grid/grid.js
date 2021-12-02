@@ -76,7 +76,7 @@ export default class DataGrid extends React.Component {
       text: 'Eliminar',
       formatter: (cell, row) => {
         return (
-          <Button onClick={() => this.props.onClickDeleteButton(row)}>
+          <Button id="btn-eliminar" onClick={() => this.props.onClickDeleteButton(row)}>
             <FontAwesomeIcon icon={faTrash} />
           </Button>
         );

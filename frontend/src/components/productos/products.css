@@ -10,16 +10,36 @@
 .react-bs-table-sizePerPage-dropdown .dropdown-toggle {
   float: left;
   margin-bottom: 10px;
+  background-color: #1bd084;
 }
 
 .search-label {
   float: right;
   padding-bottom: 10px;
 }
+
 .sr-only {
   font-size: 0;
 }
+
 #productos-crear-container .form-label {
   float: left;
   margin-bottom: 10px;
+}
+
+#productos-crear-container #btn-enviar {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #1bd084;
+  border-color: #1bd084;
+}
+
+.page-item.active .page-link {
+  background-color: #1bd084;
+  border-color: #1bd084;
+}
+
+#btn-eliminar{
+  background-color: red;
+  border-color: red;
 }
