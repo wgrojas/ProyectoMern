@@ -56,7 +56,7 @@ export default class Menu extends React.Component {
   }
   render() {
     return (
-      <Navbar fixed="top" id="navbar" bg="success" variant="light">
+      <Navbar fixed="top" id="navbar" bg="danger" variant="light">
         <Container>
           <img className="img-logo" src={Logo} alt="Logo" />
           <Navbar.Brand href="./">CompuWebSite</Navbar.Brand>
