@@ -80,7 +80,7 @@ export default class Menu extends React.Component {
               <Dropdown.Divider />
               <Dropdown.Item href="/productos">Productos</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="/login">Editar Productos</Dropdown.Item>
+              <Dropdown.Item href="/panel">Editar Productos</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={() => this.logout()}>
                 Cerrar sesión
