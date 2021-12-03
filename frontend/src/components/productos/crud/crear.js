@@ -78,40 +78,41 @@ export default class ProductosCrear extends React.Component {
 
         <Row>
           <h1>Crear Productos</h1>
+
         </Row>
         <Row>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Titulo</Form.Label>
-              <Form.Control
+          <Form style={{marginTop:50,backgroundColor:'aqua'}}>
+            <Form.Group style={{marginTop:70}} className="mb-3" controlId="formBasic">
+              {/* <Form.Label >Titulo</Form.Label> */}
+              <Form.Control placeholder='Titulo'
                 onChange={(e) => this.setValue('titulo', e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Link Imagen</Form.Label>
-              <Form.Control
+              {/* <Form.Label>Link Imagen</Form.Label> */}
+              <Form.Control placeholder='link '
                 onChange={(e) => this.setValue('imagen', e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Descripcion</Form.Label>
-              <Form.Control
+              {/* <Form.Label>Descripcion</Form.Label> */}
+              <Form.Control placeholder='Descripcion'
                 onChange={(e) => this.setValue('descripcion', e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Precio</Form.Label>
-              <Form.Control
+              {/* <Form.Label>Precio</Form.Label> */}
+              <Form.Control placeholder='Precio'
                 onChange={(e) => this.setValue('precio', e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Cantidad</Form.Label>
-              <Form.Control
+              {/* <Form.Label>Cantidad</Form.Label> */}
+              <Form.Control placeholder='Cantidad'
                 onChange={(e) => this.setValue('stock', e.target.value)}
               />
             </Form.Group>

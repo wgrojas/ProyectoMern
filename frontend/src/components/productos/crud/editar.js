@@ -144,10 +144,10 @@ export default class ProductosEditar extends React.Component {
           <h1>Editar Productos</h1>
         </Row>
         <Row>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasic">
-              <Form.Label>Titulo</Form.Label>
-              <Form.Control
+          <Form style={{marginTop:30,backgroundColor:'aqua'}} >
+            <Form.Group  style={{marginTop:70}} className="mb-3" controlId="formBasic">
+              <Form.Label  >Titulo</Form.Label>
+              <Form.Control 
                 value={this.state.producto.titulo}
                 onChange={(e) => this.setValue('titulo', e.target.value)}
               />

@@ -14,22 +14,22 @@ import Swal from "sweetalert2";
 import "./navbar.css";
 import Cookies from "universal-cookie/es6";
 import Logo from "../Logo.png";
-// const show = useState(true);
 const cookies = new Cookies();
-
+//const [show,setShow] = useState(true);
+const show = true;
 export default class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  // useEffect(() => {
+  // React.useEffect(() => {
 
-  //     if (sessionStorage.getItem ('token')){
+  // if(sessionStorage.getItem('token')){
 
-  //            show(false)}
+  //      setShow(false) }
 
-  // });
+  //  }, []);
 
   logout() {
     Swal.fire({
@@ -49,23 +49,24 @@ export default class Menu extends React.Component {
     });
   }
 
+  mostrar() {
+    if (sessionStorage.getItem("token")) {
+      show(false);
+    }
+  }
   render() {
     return (
       <Navbar fixed="top" id="navbar" bg="success" variant="light">
         <Container>
           <img className="img-logo" src={Logo} alt="Logo" />
-          <Navbar.Brand href="./">
-            CompuWebSite 
-          </Navbar.Brand>
+          <Navbar.Brand href="./">CompuWebSite</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/productos">Lista de Productos</Nav.Link>
-              {/* <Nav.Link
-                                href="/panel">Editar Productos</Nav.Link> */}
-              {/* <Navbar.Brand>
-                                    IT SmartWeb
-                                </Navbar.Brand> */}{" "}
+              <Nav.Link  href="/panel">
+                Editar Productos
+              </Nav.Link>
             </Nav>
 
             <DropdownButton id="dropdown-basic-button" title="Administrador">
@@ -84,8 +85,6 @@ export default class Menu extends React.Component {
               <Dropdown.Item onClick={() => this.logout()}>
                 Cerrar sesión
               </Dropdown.Item>
-              {/* <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}{" "}
             </DropdownButton>
           </Navbar.Collapse>
         </Container>
