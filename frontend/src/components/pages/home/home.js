@@ -7,6 +7,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
+            
             <Carousel>
                 <Carousel.Item interval={2000}>
                     <img className="d-block w-100" src="assets\\1.jpg"

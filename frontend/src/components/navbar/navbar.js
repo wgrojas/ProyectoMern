@@ -3,13 +3,12 @@ import {
   Container,
   Nav,
   Navbar,
-  DropdownButton,
-  Dropdown,
-  Row,
+  FormControl,
+  Button,
+  Form
 } from "react-bootstrap";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
 import Swal from "sweetalert2";
 import "./navbar.css";
 import Cookies from "universal-cookie/es6";
@@ -58,39 +57,36 @@ export default class Menu extends React.Component {
   }
   render() {
     return (
-      <Navbar fixed="top" id="navbar" bg="success" variant="light">
-        <Container>
-          <img className="img-logo" src={Logo} alt="Logo" />
-          <Navbar.Brand href="./">CompuSmartWeb</Navbar.Brand>
-          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-          <Navbar.Collapse id="basic-navbar-nav">
-            {/* <Nav className="me-auto">
-              <Nav.Link href="/productos">Nuestros Productos </Nav.Link>
-              <Nav.Link  href="/panel">
-                Editar Productos
-              </Nav.Link>
-            </Nav> */}
+     
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Container>
+  <img className="img-logo" src={Logo} alt="Logo"/>
+  <Navbar.Brand href="/">CompuSmartWeb</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      {/* <Nav.Link href="/productos">Productos</Nav.Link> */}
+    </Nav>
+    <Form className="d-flex">
+        <FormControl
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button  className="me-5" variant="outline-success">Search</Button>
+      </Form>
 
-            <DropdownButton id="dropdown-basic-button" title="Usuario">
-              <Dropdown.Header id="dropdown-header">
-                <Row>
-                  <FontAwesomeIcon icon={faUserCircle} />{" "}
-                  {/* <Nav.Link href="/login">Login</Nav.Link> */}{" "}
-                </Row>
-                {/* <Row>Registrarse</Row> */}
-              </Dropdown.Header>
-              <Dropdown.Divider />
-              <Dropdown.Item href="/registro">Registro</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item href="/panel">Iniciar sesión</Dropdown.Item>
-             
-              {/* <Dropdown.Item onClick={() => this.logout()}>
-                Cerrar sesión
-              </Dropdown.Item> */}
-            </DropdownButton>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <Nav >
+      <Button className="me-5" href="/registro">Regristrarse</Button>
+      <Button className="me-5" href="/login">Iniciar Sesion</Button>
+     
+    </Nav>
+  </Navbar.Collapse>
+  </Container>
+</Navbar>
+
     );
   }
 }
+

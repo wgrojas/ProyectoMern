@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container,Row } from "react-bootstrap";
 // import {listaProductos} from "./listaProductos.json";
  import Productos from "../productos/productos"
+import MenuCrud from "../navbar/nav";
 
 export default class ListarProductos extends Component {
     constructor(){
@@ -57,7 +58,10 @@ export default class ListarProductos extends Component {
       return (
         
 
-    
+        
+      <div>
+        
+     
        <Container>
          
          <h2 style={{ marginTop: 120, fontSize:50 }}><b>Productos Tecnológicos</b></h2>
@@ -70,7 +74,7 @@ export default class ListarProductos extends Component {
     
         </Container>
     
-      
+        </div>
       );
 
       }

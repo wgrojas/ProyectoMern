@@ -50,7 +50,7 @@ export default class Registro extends React.Component {
             },
           });
 
-          this.props.history.push("/productos");
+          this.props.history.push("/");
         }
 
         this.setState({ loading: false });

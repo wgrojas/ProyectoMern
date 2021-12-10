@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Row } from "react-bootstrap";
+import MenuCrud from "../navbar/nav";
 import ProductosBuscar from "./crud/buscar";
 import ProductosCrear from "./crud/crear";
 import ProductosEditar from "./crud/editar";
@@ -33,7 +34,11 @@ export default class Productos extends React.Component {
   //
   render() {
     return (
+      <div>
+      <MenuCrud/>
       <Container id="productos-container">
+      
+
         <Row>
           <Nav
             fill
@@ -65,6 +70,9 @@ export default class Productos extends React.Component {
           )}
         </Row>
       </Container>
+
+   </div>
+
     );
   }
 }
