@@ -3,6 +3,7 @@ import { Col,Card,Button } from 'react-bootstrap';
 import './productos.css'
 
 
+
 export default function Productos(props) {
    
 
@@ -41,7 +42,7 @@ export default function Productos(props) {
 
         </Card.Body>
 
-         <Button className="Boton">Comprar</Button>
+         <Button className="Boton">Ver informacion</Button>
 
        
         </Card>

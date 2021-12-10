@@ -1,10 +1,12 @@
 import React from "react";
 import {Carousel} from "react-bootstrap";
+import ListarProductos from "../../productos/listarProductos";
 import "./home.css";
 
 export default class Home extends React.Component {
     render() {
         return (
+            <div>
             <Carousel>
                 <Carousel.Item interval={2000}>
                     <img className="d-block w-100" src="assets\\1.jpg"
@@ -25,6 +27,10 @@ export default class Home extends React.Component {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+
+            <ListarProductos/>
+
+           </div>
         );
     }
 }

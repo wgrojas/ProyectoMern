@@ -19,7 +19,7 @@ const cookies = new Cookies();
 const show = true;
 
 
-export default class Menu extends React.Component {
+export default class MenuCrud extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -58,17 +58,17 @@ export default class Menu extends React.Component {
   }
   render() {
     return (
-      <Navbar fixed="top" id="navbar" bg="success" variant="light">
+      <Navbar fixed="top" id="navbar" bg="primary" variant="dark">
         <Container>
           <img className="img-logo" src={Logo} alt="Logo" />
           <Navbar.Brand href="./">CompuSmartWeb</Navbar.Brand>
-          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+         
           <Navbar.Collapse id="basic-navbar-nav">
             {/* <Nav className="me-auto">
-              <Nav.Link href="/productos">Nuestros Productos </Nav.Link>
-              <Nav.Link  href="/panel">
+               <Nav.Link href="/productos">Nuestros Productos </Nav.Link> 
+               <Nav.Link  href="/panel">
                 Editar Productos
-              </Nav.Link>
+              </Nav.Link> 
             </Nav> */}
 
             <DropdownButton id="dropdown-basic-button" title="Usuario">
@@ -80,13 +80,11 @@ export default class Menu extends React.Component {
                 {/* <Row>Registrarse</Row> */}
               </Dropdown.Header>
               <Dropdown.Divider />
-              <Dropdown.Item href="/registro">Registro</Dropdown.Item>
+              <Dropdown.Item href="/panel">Editar Productos</Dropdown.Item>
               <Dropdown.Divider />
-              <Dropdown.Item href="/panel">Iniciar sesión</Dropdown.Item>
-             
-              {/* <Dropdown.Item onClick={() => this.logout()}>
+              <Dropdown.Item onClick={() => this.logout()}>
                 Cerrar sesión
-              </Dropdown.Item> */}
+              </Dropdown.Item>
             </DropdownButton>
           </Navbar.Collapse>
         </Container>

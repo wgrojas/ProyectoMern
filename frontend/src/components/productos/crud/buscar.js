@@ -6,6 +6,7 @@ import DataGrid from '../../grid/grid';
 import ConfirmationPromprs from '../../prompts/confirmation';
 import Loading from '../../loading/loading';
 import MessagePrompt from '../../prompts/message';
+import ListarProductos from '../listarProductos';
 // import { set } from 'react-ga';
 
 const columns = [
@@ -128,6 +129,7 @@ export default class ProductosBuscar extends React.Component {
 
   render() {
     return (
+      <div>
       <Container id="productos-buscar-container">
         <ConfirmationPromprs
           show={this.state.confirmation.show}
@@ -160,6 +162,8 @@ export default class ProductosBuscar extends React.Component {
           />
         </Row>
       </Container>
+      <ListarProductos/>
+      </div>
     );
   }
 }

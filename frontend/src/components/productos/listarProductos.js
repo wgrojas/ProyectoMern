@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container,Row } from "react-bootstrap";
 // import {listaProductos} from "./listaProductos.json";
-import Productos from "../productos/productos"
-
-
+ import Productos from "../productos/productos"
 
 export default class ListarProductos extends Component {
     constructor(){

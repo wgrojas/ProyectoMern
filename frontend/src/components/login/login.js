@@ -86,7 +86,7 @@ export default class login extends React.Component {
                   <Form.Group>
                     <Form.Label>Contraseña</Form.Label>
                     <Form.Control
-                      type="password"
+                    
                       onChange={(e) => this.setState({ pass: e.target.value })}
                     />
                   </Form.Group>
