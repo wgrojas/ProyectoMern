@@ -45,9 +45,9 @@ return (
               cantidad: <b>{info.stock}</b>
             </Card.Text>
 
-            <Card.Text>
+            {/* <Card.Text>
               id: <b>{info.id}</b>
-            </Card.Text>
+            </Card.Text> */}
 
             {/* <Card.Text>
                    categoria: <b>{info.categoria}</b>
@@ -61,8 +61,19 @@ return (
             onClick={()=>update()}
             >
            
-         Ver informacion
+         Ver mas
           </Button>
+
+          <Button
+            //href="/infoProductos"
+            className="Boton"
+            
+            onClick={()=>setMod(3)}
+            >
+           
+         Ver menos
+          </Button>
+
         </Card>
       </Col>
 
