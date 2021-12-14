@@ -17,7 +17,7 @@ export default function ListarProductos() {
 
   const peticionGet = async () => {
     await axios
-      .get("http://localhost:3001/productos")
+      .get("https://compuback.herokuapp.com/")
       .then((response) => {
         setProductos(response.data);
         setListaProductos(response.data);
@@ -95,7 +95,7 @@ export default function ListarProductos() {
             fontSize: 50,
           }}
         >
-          <b>Productos Tecnológicos</b>
+          <b>Tecnológia y Computadores</b>
         </h2>
 
         <Row> {arrayComponente} </Row>
