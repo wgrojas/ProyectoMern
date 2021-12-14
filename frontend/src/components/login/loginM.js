@@ -35,7 +35,7 @@ export default class login extends React.Component {
   iniciarSesion() {
     this.setState({ loading: true });
 
-   axios.post(`${host}/usuarios/login`, {
+   axios.post(`${host}/admin/login`, {
         usuario: this.state.usuario,
         pass: this.state.pass,
         

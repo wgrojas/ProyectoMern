@@ -7,6 +7,7 @@ let response = {
 
 exports.create = function(req, res){
     let producto = new Producto({
+
         titulo: req.body.titulo,
         imagen: req.body.imagen,
         descripcion: req.body.descripcion,
@@ -38,6 +39,7 @@ exports.find = function(req, res) {
 exports.findOne = function(req, res) {
     Producto.findOne({_id: req.params.id}, function(err, producto) {
         res.json(producto)
+        
     })
 }
 

@@ -1,85 +1,105 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,Row } from "react-bootstrap";
-// import {listaProductos} from "./listaProductos.json";
- import Productos from "../productos/productos"
-import MenuCrud from "../navbar/nav";
+import "./buscar.css";
+import { Button, Container, Form, FormControl, Row } from "react-bootstrap";
+// import {productos} from "./productos.json";
+import Productos from "./productos";
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
-export default class ListarProductos extends Component {
-    constructor(){
-      super()
-      this.state={
-        titulo:"",
-        imagen:"",
-        descripcion:"",
-        precio:"",
-        stock:"",
-        categoria:"",
-        listaProductos:[]
-      };
-  
-    }
-    componentDidMount(){
-        this.fetchProductos();
-    }
 
-    fetchProductos(){
-        fetch('http://localhost:3001/productos')
-        .then(res => res.json())
-        .then(data => {
-            this.setState({listaProductos:data})
-            console.log(this.state.listaProductos)
+export default function ListarProductos() {
+  const [productos, setProductos] = useState([]);
+  const [listaProductos, setListaProductos] = useState([]);
+  const [busqueda, setBusqueda] = useState("");
 
-        })
-        
+  const peticionGet = async () => {
+    await axios
+      .get("http://localhost:3001/productos")
+      .then((response) => {
+        setProductos(response.data);
+        setListaProductos(response.data);
+      })
+      .catch((error) => {
+        console.log();
+      });
+    console.log(setProductos);
+  };
 
-    }
-    render(){
-       
-      var arrayComponente= this.state.listaProductos.map(
-        (listaProductos,i) =>{
-          return(
-           
-  
-            <Productos
-             
-            Key={i}
-            titulo={listaProductos.titulo}
-            imagen={listaProductos.imagen}
-            descripcion={listaProductos.descripcion}
-            precio={listaProductos.precio}
-            stock={listaProductos.stock}
-            categoria={listaProductos.categoria}
-            />
-          )
-        }
-      )
+  const handleChange = (e) => {
+    setBusqueda(e.target.value);
+    filtrar(e.target.value);
+  };
 
-      return (
-        
-
-        
-      <div>
-        
-     
-       <Container>
-         
-         <h2 style={{ marginTop: 120, fontSize:50 }}><b>Productos Tecnológicos</b></h2>
-         
-           <Row>
-         
-               {arrayComponente}
-               
-           </Row>
-    
-        </Container>
-    
-        </div>
-      );
-
+  const filtrar = (terminoBusqueda) => {
+    var resultadosBusqueda =listaProductos.filter((elemento) => {
+      if (
+        elemento.titulo
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase())
+      ) {
+        return elemento;
       }
-    }
-    
-    
-   
-    
+    });
+    setProductos(resultadosBusqueda);
+  };
+
+  useEffect(() => {
+    peticionGet();
+  }, []);
+
+  var arrayComponente = productos.map((productos, i) => {
+    return (
+      <Productos
+        Key={i}
+        titulo={productos.titulo}
+        imagen={productos.imagen}
+        descripcion={productos.descripcion}
+        precio={productos.precio}
+        stock={productos.stock}
+        id={productos._id}
+        categoria={productos.categoria}
+
+      />
+  
+     
+    );
+  });
+
+  return (
+    <Fragment>
+      <Container>
+      <div className="containerInput"></div>
+        <div className="containerInput">
+          <Form className="d-flex">
+            <FormControl
+              type="search"
+              placeholder="Buscar Producto"
+              className="me-2"
+              aria-label="Buscar"
+              onChange={handleChange}
+              value={busqueda}
+            />
+            <Button className="btn btn-success">
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
+          </Form>
+        </div>
+
+        <h2
+          style={{
+            marginTop: 120,
+            fontSize: 50,
+          }}
+        >
+          <b>Productos Tecnológicos</b>
+        </h2>
+
+        <Row> {arrayComponente} </Row>
+      </Container>
+    </Fragment>
+  );
+}

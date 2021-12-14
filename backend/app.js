@@ -29,7 +29,7 @@ database.mongoConnect();
 app.use('/productos', productosRouter);
 
 //app.use(auth);
-app.use('/usuarios', usuariosRouter)
+app.use('/admin', usuariosRouter)
 
 
 

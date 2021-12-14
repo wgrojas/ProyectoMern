@@ -5,6 +5,7 @@ import error from "../404.jpg";
 import Menu from '../navbar/navbar';
 import Registro from '../registro/registro'
 import Login from '../login/loginM'
+import ListarProductos from '../productos/listarProductos';
 
 
 export default function DashBoard() {
@@ -17,6 +18,7 @@ export default function DashBoard() {
     
       <Switch>
         <Route exact path={['/']} component={Home} />
+        <Route exact path={['/productos']} component={ListarProductos} />
         <Route exact path={['/registro']} component={Registro} />
         <Route exact path={['/login']} component={Login} />
 

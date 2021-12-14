@@ -1,19 +1,18 @@
 import React from 'react';
 import { request } from '../../helper/helper';
 import { Container, Row } from 'react-bootstrap';
-//import './empleados.css';
 import DataGrid from '../../grid/grid';
 import ConfirmationPromprs from '../../prompts/confirmation';
 import Loading from '../../loading/loading';
 import MessagePrompt from '../../prompts/message';
 import ListarProductos from '../listarProductos';
-// import { set } from 'react-ga';
+
 
 const columns = [
   {
     dataField: '_id',
     text: 'Product ID',
-    hidden: true,
+    hidden: false,
   },
   {
     dataField: 'titulo',
